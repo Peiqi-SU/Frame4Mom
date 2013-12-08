@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Frame</title>
+<link rel="stylesheet" type="text/css" href="global.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+<body id="upload">
+<h1>Frame for Mom</h1>
+<form action="cgi/upload_file.cgi" method="POST" enctype="multipart/form-data" runat="server">
+  <p>
+    <label>Please select a photo for your Mom today:</label>
+    <input type="file" name="yourname" id="img"/>
+  </p>
+  <img id="preview" src="img/default.png" alt="your image" /> 
+  <script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            $('#preview').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+	}
+	$("#img").change(function(){
+		readURL(this);
+	});
+	</script>
+  <p>Enter a description of this photo:
+    <input type="text" name="description" />
+  </p>
+  <p>
+    <input type="submit" value="Send to Mom!" />
+  </p>
+</form>
+</body>
+</html>

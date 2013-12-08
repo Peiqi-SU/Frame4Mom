@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Frame</title>
+<link rel="stylesheet" type="text/css" href="global.css">
+<script type='text/javascript'>
+var xmlhttp1, xmlhttp2, fileName, fileDescription;
+xmlhttp1 = new XMLHttpRequest();
+xmlhttp1.open('GET', 'http://192.168.11.8/~peiqisu/Frame4Mom/cgi/newestfile.txt', false);
+xmlhttp1.send();
+fileName = xmlhttp1.responseText;
+
+xmlhttp2 = new XMLHttpRequest();
+xmlhttp2.open('GET', 'http://192.168.11.8/~peiqisu/Frame4Mom/cgi/newestfileDescription.txt', false);
+xmlhttp2.send();
+fileDescription = xmlhttp2.responseText;
+</script>
+</head>
+
+<body id="uploaded">
+<script>
+if(fileName != null){
+var src = 'http://192.168.11.8/~peiqisu/Frame4Mom/cgi/upload/'+fileName;
+console.log(src);
+img = document.createElement('img');
+img.id = "displayImg";
+img.src = src;
+document.body.appendChild(img);
+}
+</script>
+<h1><script>document.write(fileDescription);</script></h1>
+</body>
+</html>

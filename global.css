@@ -1,0 +1,42 @@
+body {
+	width: 820px;
+}
+h1 {
+	color: #555;
+	border-bottom: 1px solid #ccc;
+}
+p {
+	color: #121212;
+	font: normal 14px/16px Helvetica, sans-serif;
+}
+input[type="text"] {
+	padding: 5px;
+	font: normal 14px/16px Helveticam sans-serif;
+	color: #555;
+}
+#upload, #uploaded, #frame{
+	background-color: #E0D71F;
+}
+#uploaded_photo {
+	background-color: #F90;
+	width: 100%;
+	height: auto;
+}
+#uploaded_description {
+	background-color: #36F;
+	width: 100%;
+	height: 30px;
+}
+#preview{
+	width: 400px;
+	height: auto;
+}
+#displayImg{
+	width: 400px;
+	height:auto;
+}
+#feedback{
+	width: 100px;
+	height: 100px;
+}
+
